@@ -1,59 +1,121 @@
-# Ecom
+# 🛒 MERN Stack E-commerce Website
 
-Getting Started with Create React App
-This project was bootstrapped with Create React App.
+This is a complete **E-commerce web application** built using the MERN stack (MongoDB, Express, React, Node.js). It includes all essential features for online shopping: product listings, cart management, checkout, user authentication, and an admin dashboard for order and product management.
 
-Available Scripts
-In the project directory, you can run:
+> 🚀 Project Status: In development  
+> 🌐 Live Demo: _Coming Soon_
 
-npm start
-Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+---
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+## 📌 Key Features
 
-npm test
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
+### 🧑 User Features
+- User registration and login with JWT-based authentication
+- Browse products by category or name
+- View product details
+- Add and remove products from cart
+- Checkout with summary and simulated payment
 
-npm run build
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🛠 Admin Features
+- Admin login with secure routes
+- Add, update, and delete products
+- View all orders placed by users
+- Manage users and inventory
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+---
 
-See the section about deployment for more information.
+## 🧰 Tech Stack
 
-npm run eject
-Note: this is a one-way operation. Once you eject, you can’t go back!
+| Layer     | Technology            |
+|-----------|------------------------|
+| Frontend  | React, React Router, Bootstrap |
+| Backend   | Node.js, Express.js    |
+| Database  | MongoDB + Mongoose     |
+| Authentication | JWT, bcryptjs     |
+| State Management | Context API / Redux (optional) |
+| Tools     | Nodemon, dotenv        |
 
-If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📁 Project Structure
 
-You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Ecom/
+├── client-main/ # React frontend
+│ ├── public/ # Public assets
+│ └── src/ # React components and pages
+│ ├── components/ # Reusable components
+│ ├── pages/ # Home, Cart, Login, etc.
+│ ├── App.js # Main App component
+│ └── index.js # Entry point
+│
+├── server-master/ # Express backend
+│ ├── controllers/ # Business logic
+│ ├── models/ # Mongoose schemas
+│ ├── routes/ # API routes (product, user, order)
+│ ├── middleware/ # Auth, error handling
+│ ├── config/ # DB connection
+│ └── server.js # Entry point for backend
 
-Learn More
-You can learn more in the Create React App documentation.
 
-To learn React, check out the React documentation.
+---
 
-Code Splitting
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## 🔧 Setup Instructions
 
-Analyzing the Bundle Size
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### 🖥️ Backend (Express + MongoDB)
 
-Making a Progressive Web App
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+1. Navigate to the backend folder:
 
-Advanced Configuration
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```bash
+cd server-master
+npm install
+```
 
-Deployment
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+2. Environment Variables
+PORT=5000
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret_key
 
-npm run build fails to minify
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify "# web" "# client" "# test-1"
+```bash
+cd ../client-main
+npm run dev
+```
+🌐 Deployment
+You can deploy this app using:
+
+Frontend:
+ Netlify
+
+ Vercel
+
+ Render (static build)
+
+Backend:
+ Render
+
+ Railway
+
+ Heroku
+
+Database:
+Use MongoDB Atlas (cloud-hosted MongoDB)
+
+🛠 REST API Endpoints
+🔐 Auth
+Method	Endpoint	Description
+POST	/api/auth/register	Register user
+POST	/api/auth/login	Login user
+
+🛍 Products
+Method	Endpoint	Description
+GET	/api/products	Get all products
+GET	/api/products/:id	Get single product
+POST	/api/products	Add new product (admin)
+PUT	/api/products/:id	Update product (admin)
+DELETE	/api/products/:id	Delete product (admin)
+
+🧾 Orders
+Method	Endpoint	Description
+POST	/api/orders	Create new order
+GET	/api/orders	Get all orders (admin)
+
+
